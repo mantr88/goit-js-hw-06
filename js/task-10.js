@@ -9,27 +9,33 @@ const refs = {
   boxesDiv: document.querySelector('#boxes'),
 }
 
-function receivesAmount(event) {
-  let amount = event.currentTarget.value;
+console.log(refs.boxesDiv)
+
+function receivesAmount() {
+  let amount = refs.input.value;
   
-  createBoxes(amount)
+  createBoxes(amount);
   }
 
   
-let array = [];
   
 function createBoxes(amount) {
-  const totalAmount = array.length + amount;
-  for (let i = array.length; i < totalAmount; i += 1) {
-    array.push(document.createElement('div'));    
+  let arrayElements = [];
+
+  for (let i = 0; i < amount; i += 1) {
+      const newBoxes = document.createElement('div');
+      newBoxes.style.backgroundColor = getRandomHexColor();
+      newBoxes.style.with = `${30 + i * 10}px`;
+      newBoxes.style.hight = `${30 + i * 10}px`;
+      arrayElements.push(newBoxes);    
   }
-      
+
+  refs.boxesDiv.append(...arrayElements);
 }
+   
+
       
-console.log(array)
-      
-      refs.input.addEventListener('input', receivesAmount);
-      // // refs.createBtn.addEventListener('click', );
+refs.createBtn.addEventListener('click', receivesAmount);
       
 
 
@@ -45,15 +51,6 @@ console.log(array)
 // 3. Всі елементи повинні мати випадковий колір фону у форматі HEX.Використовуй готову функцію getRandomHexColor 
 // для отримання кольору.
 
-
-// const onInputClick = event => {
-//   const newDiv = refs.input.value;
-  
-//   console.log(newDiv)
-//   // createBoxes(newDiv);
-// }
-
-// refs.input.addEventListener('input', onInputClick);
 
 
 
