@@ -5,11 +5,9 @@ const valueRef = document.querySelector('#value');
 const counter = {
     counterValue: 0,
     increment() {
-        console.log('Кликнули increment');
         this.counterValue += 1;
     },
     decrement() {
-        console.log('Кликнули decrement');
         this.counterValue -= 1;
     },
 };
