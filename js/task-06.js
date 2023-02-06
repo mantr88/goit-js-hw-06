@@ -4,7 +4,7 @@ inputRefs.addEventListener('blur', checksText);
 
 
 function checksText(event) {
-    if (event.currentTarget.value.length <= inputRefs.dataset.length) {
+    if (event.currentTarget.value.length === Number(inputRefs.dataset.length)) {
         if (inputRefs.classList.contains('invalid')) {
             inputRefs.classList.remove('invalid');
         }

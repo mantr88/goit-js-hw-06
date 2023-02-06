@@ -9,6 +9,6 @@ const bodyRef = document.querySelector('body');
 btnRef.addEventListener('click', changeColorBgrBody)
 
 function changeColorBgrBody(event) {
-  bodyRef.style.backgroundColor = getRandomHexColor();
-  printColorRef.textContent = getRandomHexColor();
+  const currentBodyColor = bodyRef.style.backgroundColor = getRandomHexColor();
+  printColorRef.textContent = currentBodyColor;
 }
